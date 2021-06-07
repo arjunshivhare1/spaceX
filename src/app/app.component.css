@@ -1,0 +1,11 @@
+.loader
+    img {
+        width: 100px;
+        height: 100px;
+    }
+.loader{
+    position:absolute;
+    top: 50%;
+    right: 50%;
+
+}    

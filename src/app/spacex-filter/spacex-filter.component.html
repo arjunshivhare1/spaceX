@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Filters</h5>
+    <button class="btn btn-success space-all" (click)="reset()" >All</button>
+    <h6 class="text-center">Launch years</h6>
+    <hr/>
+    <div class="ml-4 mb-4">
+      <div class="row">
+        <button class="btn space-all" (click)="fetchDataByYear.emit(item)" *ngFor="let item of years" [ngClass]="launchYear==item ? 'btn-primary': 'btn-success'">{{item}}</button>
+      </div>
+    </div>
+    <h6 class="text-center">Successful Launch</h6>
+    <hr />
+    <div class="ml-4 mb-4">
+      <div class="row">
+        <a href="#" class="btn  space-all" (click)="fetchDataByLaunch.emit(true)" [ngClass]="successfulLaunch=='true' ? 'btn-primary': 'btn-success'">True</a>
+        <a href="#" class="btn  space-all" (click)="fetchDataByLaunch.emit(false)" [ngClass]="successfulLaunch=='false' ? 'btn-primary': 'btn-success'">False</a>
+      </div>
+    </div>
+    <h6 class="text-center">Successful Landing</h6>
+    <hr />
+    <div class="ml-4">
+      <div class="row">
+        <a href="#" class="btn space-all" (click)="fetchDataByLanding.emit(true)"[ngClass]="successfulLanding=='true' ? 'btn-primary': 'btn-success'">True</a>
+        <a href="#" class="btn space-all" (click)="fetchDataByLanding.emit(false)"[ngClass]="successfulLanding=='false' ? 'btn-primary': 'btn-success'">False</a>
+      </div>
+    </div>
+  </div>
+</div>

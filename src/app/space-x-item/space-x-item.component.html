@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let item of spacexdata">
+        <div class="card" >
+            <img class="card-img-top" [src]="item.links.mission_patch" onerror='this.src="../../assets/images/placeholder image.jpg"' alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">{{item?.mission_name}} #{{item.flight_number}}</h4>
+              <ul>
+                <li *ngIf="item.mission_id.length > 0"><strong>Mission ids:</strong> {{item.mission_id}}</li>
+                <li><strong>Launch year: </strong> {{item.launch_year}}</li>
+                <li><strong>Successful launch:</strong> {{item.launch_success}}</li>
+                <li><strong>Successful Landing:</strong> {{item.rocket.first_stage.cores[0].land_success}}</li>
+              </ul>
+            </div>
+          </div>
+    </div>
+</div>
